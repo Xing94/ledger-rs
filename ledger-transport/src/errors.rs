@@ -1,5 +1,5 @@
 /*******************************************************************************
-*   (c) 2020 ZondaX GmbH
+*   (c) 2020 Zondax GmbH
 *
 *  Licensed under the Apache License, Version 2.0 (the "License");
 *  you may not use this file except in compliance with the License.
@@ -31,4 +31,7 @@ pub enum TransportError {
     /// Error Unknown
     #[error("Unknown Error")]
     UnknownError,
+    /// APDU error
+    #[error("Ledger device: APDU error {1}")]
+    APDU(u16, String),
 }
